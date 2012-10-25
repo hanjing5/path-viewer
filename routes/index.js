@@ -19,14 +19,13 @@ var child;
 
 var builds;
 // executes `pwd`
-var shell_cmd = "ls -l .";
+var shell_cmd = "ls -l /home/socialapp/shopycat.com/releases | sort -n -r | head -6 | cut -c 40-100";
 child = exec(shell_cmd, function (error, stdout, stderr) {
   builds = stdout;
   var tmp = builds.split("\n");
   for (var i=0;i<tmp.length;i++)
   {
     var subtmp = tmp[i].split(" ");
-    var new_tmp = "";
     tmp[i] = subtmp;
   }
 

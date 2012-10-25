@@ -3,12 +3,17 @@ extends layout
 block content
   h1= title
 
-  table(class="table")
+  table(class="table table-striped")
     tr
-      td Day
-      td Time Deployed
-      td Build ID
-    - for (var i = 0; i < tmp.length; ++i) {
+      td
+      td
+        b Day
+      td
+        b Time Deployed
+      td
+        b Build ID
+    - for (var i = 0; i < tmp.length-1; ++i) {
+      - if (i == 0) { continue; }
       - if (i == 1) {
         tr(class="success")
           - for (var j =0; j < tmp[i].length; j++) {
