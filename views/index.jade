@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+
+  table(class="table")
+    tr
+      td Day
+      td Time Deployed
+      td Build ID
+    - for (var i = 0; i < tmp.length; ++i) {
+      - if (i == 1) {
+        tr(class="success")
+          - for (var j =0; j < tmp[i].length; j++) {
+            td= tmp[i][j]
+          - }
+      - } else {
+        tr
+          - for (var j =0; j < tmp[i].length; j++) {
+            td= tmp[i][j]
+          - }
+      - }
+    - }
+
